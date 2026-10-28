@@ -175,7 +175,7 @@ public class Main {
         //      Test your program with different combinations of inputs to ensure it works correctly.
 
         System.out.println("Exercise 07");
-        System.out.println("What EMV level is the student in? (1, 2, 3, or 4)");
+        System.out.println("What EMVs level is the student in? (1, 2, 3, or 4)");
         int emv = scanner.nextInt();
 
         System.out.println("Has the student paid the trip fee? (true or false)");
