@@ -144,7 +144,6 @@ public class Main {
         //      8: hachi
         //      9: kyuu
         //      default: Mukō na sūchi
-
         System.out.println("Which digit do you want to translate (0-9)?");
         int digit = scanner.nextInt();
 
@@ -165,64 +164,39 @@ public class Main {
                 case 9 -> "Neun";
                 default -> "Ungültige Ziffer!";
             };
-            case 2 ->
-            case 3 -> switchJapanese(digit);
+            case 2 -> switch (digit) {
+                case 0 -> "Zero";
+                case 1 -> "One";
+                case 2 -> "Two";
+                case 3 -> "Three";
+                case 4 -> "Four";
+                case 5 -> "Five";
+                case 6 -> "Six";
+                case 7 -> "Seven";
+                case 8 -> "Eight";
+                case 9 -> "Nine";
+                default -> "Invalid digit!";
+            };
+            case 3 -> switch (digit) {
+                case 0 -> "zero";
+                case 1 -> "ichi";
+                case 2 -> "ni";
+                case 3 -> "san";
+                case 4 -> "shi";
+                case 5 -> "go";
+                case 6 -> "roku";
+                case 7 -> "nana";
+                case 8 -> "hachi";
+                case 9 -> "kyuu";
+                default -> "Mukō na sūchi";
+            };
             default -> "Invalid language choice!";
         };
 
         System.out.println("Output: " + translation);
 
 
-    }
 
-
-     switch (digit) {
-            case 0 -> "Null";
-            case 1 -> "Eins";
-            case 2 -> "Zwei";
-            case 3 -> "Drei";
-            case 4 -> "Vier";
-            case 5 -> "Fünf";
-            case 6 -> "Sechs";
-            case 7 -> "Sieben";
-            case 8 -> "Acht";
-            case 9 -> "Neun";
-            default -> "Ungültige Ziffer!";
-        };
-    }
-
-    public static String switchEnglish(int digit) {
-        return switch (digit) {
-            case 0 -> "Zero";
-            case 1 -> "One";
-            case 2 -> "Two";
-            case 3 -> "Three";
-            case 4 -> "Four";
-            case 5 -> "Five";
-            case 6 -> "Six";
-            case 7 -> "Seven";
-            case 8 -> "Eight";
-            case 9 -> "Nine";
-            default -> "Invalid digit!";
-        };
-    }
-
-    public static String switchJapanese(int digit) {
-        return switch (digit) {
-            case 0 -> "zero";
-            case 1 -> "ichi";
-            case 2 -> "ni";
-            case 3 -> "san";
-            case 4 -> "shi";
-            case 5 -> "go";
-            case 6 -> "roku";
-            case 7 -> "nana";
-            case 8 -> "hachi";
-            case 9 -> "kyuu";
-            default -> "Mukō na sūchi";
-        };
-
-        
 
 
         //--------------------------------------------------------------------------------------------------------------
@@ -232,7 +206,30 @@ public class Main {
         //      Calculate the correct answer and print it out.
         //      Print a warning when the user tries to divide by 0 (Example: 2/0 -> number two must not be 0!
 
+        System.out.println("Give me the first number:");
+        double num1 = scanner.nextDouble();
 
+        System.out.println("Give me the second number:");
+        double num2 = scanner.nextDouble();
+
+        scanner.nextLine();
+
+        System.out.println("Give me an operation (addition, subtraction, division, multiplication):");
+        String operation = scanner.nextLine();
+
+        switch (operation) {
+            case "addition" -> System.out.println(num1 + num2);
+            case "subtraction" -> System.out.println(num1 - num2);
+            case "multiplication" -> System.out.println(num1 * num2);
+            case "division" -> {
+                if (num2 == 0) {
+                    System.out.println("number two must not be 0!");
+                } else {
+                    System.out.println(num1 / num2);
+                }
+            }
+            default -> System.out.println("Invalid operation!");
+        }
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Optional exercises");
         // 01.  Try to come up with a program on your own and the tools you
