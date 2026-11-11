@@ -16,20 +16,20 @@ public class Main {
         System.out.println("Exercise 01");
         // 01.  Consider the following code:
         //      Do not run this code immediately!
-        //
-        //      int iteratorEx1 = 0;
-        //
-        //      do {
-        //          System.out.println("iteratorEx1:" + iteratorEx1 + " ");
-        //      }
-        //      while (iteratorEx1 < 10);
+
+              int iteratorEx1 = 0;
+
+              do {
+                  System.out.println("iteratorEx1:" + iteratorEx1 ++);
+              }
+              while (iteratorEx1 < 10);
         //
         //      Questions to consider:
-        //      1. What would happen if you ran this code as is?
-        //      2. Why does this behavior occur?
-        //      3. How can you modify the code to achieve the desired output:
+        //      1. What would happen if you ran this code as is? run forever
+        //      2. Why does this behavior occur? nothing stops the loop
+        //      3. How can you modify the code to achieve the desired output: add a +
         //         i:0 i:1 i:2 i:3 i:4 i:5 i:6 i:7 i:8 i:9
-        //      4. Extra: What happens, if the initial value of "iteratorEx1" would be set to 100 instead of 0?
+        //      4. Extra: What happens, if the initial value of "iteratorEx1" would be set to 100 instead of 0? it couldnt run because it is never wrong
 
 
         //--------------------------------------------------------------------------------------------------------------
@@ -46,14 +46,90 @@ public class Main {
         //      02-09. Even numbers from 10 to -10 (descending)
         //      02-10. Odd numbers from 10 to -10 (descending)
 
+        int i1 = 0;
+        int i2 = 42;
+        int i3 = 42;
+        int i4 = 0;
+        int i5 = 1;
+        int i6 = -10;
+        int i7 = 35;
+        int i8 = 15;
+        int i9 = 10;
+        int i10 = 9;
+
+
+
+        System.out.println("02-01");
+        do {
+            System.out.println(i1);
+            i1++;
+        } while (i1 <= 100);
+
+        System.out.println("02-02");
+        do {
+            System.out.println(i2);
+            i2++;
+        } while (i2 <= 100);
+
+        System.out.println("02-03");
+        do {
+            System.out.println(i3);
+            i3++;
+        } while (i3 <= 123);
+
+        System.out.println("02-04");
+        do {
+            System.out.println(i4);
+            i4 += 2;
+        } while (i4 <= 10);
+
+        System.out.println("02-05");
+        do {
+            System.out.println(i5);
+            i5 += 2;
+        } while (i5 <= 10);
+
+        System.out.println("02-06");
+        do {
+            System.out.println(i6);
+            i6++;
+        } while (i6 <= 20);
+
+        System.out.println("02-07");
+        do {
+            System.out.println(i7);
+            i7--;
+        } while (i7 >= 0);
+
+        System.out.println("02-08");
+        do {
+            System.out.println(i8);
+            i8--;
+        } while (i8 >= -20);
+
+        System.out.println("02-09");
+        do {
+            System.out.println(i9);
+            i9 -= 2;
+        } while (i9 >= -10);
+
+        System.out.println("02-10");
+        do {
+            System.out.println(i10);
+            i10 -= 2;
+        } while (i10 >= -10);
+
 
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 03");
         // 03.  Calculate the sum of all numbers from 0-100 (both inclusive). Print it to the console.
 
         int whileSum_03 = 0;
-
-        // Your code here
+        int sum3 = 0;
+        do {
+            whileSum_03 += sum3 ;
+            sum3 ++;
+        } while (sum3 <= 100);
 
         System.out.println(whileSum_03); // Should be 5050
 
@@ -63,6 +139,11 @@ public class Main {
         // 04.  Calculate the sum of all even numbers from 0-100 (both inclusive). Print it to the console.
 
         int whileSum_04 = 0;
+        int sum4 = 0;
+        do {
+            whileSum_04 += sum4 ;
+            sum4 +=2 ;
+        } while (sum4 <= 100);
 
         // Your code here
 
@@ -74,6 +155,11 @@ public class Main {
         // 05.  Calculate the sum of all odd numbers from 0-100 (both inclusive). Print it to the console.
 
         int whileSum_05 = 0;
+        int sum5 = 1;
+        do {
+            whileSum_05 += sum5 ;
+            sum5 +=2 ;
+        } while (sum5 <= 100);
 
         // Your code here
 
@@ -93,13 +179,19 @@ public class Main {
         int randomNumber;
 
         // Setting the value of the integer to a random number between 0 (inclusive) and 101 (exclusive)
-        randomNumber = randomGenerator.nextInt(101);
+        // randomNumber = randomGenerator.nextInt(101);
         long iterationSteps = 0;
 
         // Implement a do-while loop that:
         // 1. Generates a random number
         // 2. Increments the iteration count
         // 3. Stops when 22 is generated
+        do {
+            randomNumber = randomGenerator.nextInt(101);
+            iterationSteps++;
+        } while (randomNumber != 22);
+
+
 
         // Your code here
 
@@ -130,6 +222,10 @@ public class Main {
         // 3. Continues until firstRandomNumber equals secondRandomNumber
 
         // Your code here
+        do {
+            secondRandomNumber = randomGenerator.nextInt(101);
+            iterationSteps++;
+        } while (firstRandomNumber != secondRandomNumber);
 
         System.out.println("The program ran " + iterationSteps + " times until both random numbers matched.");
         System.out.println("The matching number was: " + firstRandomNumber);
@@ -160,6 +256,10 @@ public class Main {
         // 3. Continues until the guessed number matches the random number
 
         // Your code here
+        do {
+            System.out.println("Guess the number (0-10):");
+            guessedNumber = input.nextInt();
+        } while (guessedNumber != rndNumberToGuess);
 
         System.out.println("Congratulations! You've guessed the correct number: " + rndNumberToGuess);
 
