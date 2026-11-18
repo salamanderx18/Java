@@ -16,12 +16,55 @@ public class Main {
         //
         //      Hint2: Check if your implementation is correct. For example; the Year 1900 is not a leap year.
 
+
+        int year = 0;
+
+        while (year <= 2024) {
+            year+= 4;
+            if (year % 100 == 0 && year % 400 == 0) {
+                System.out.println("Leap year: " + year);
+            }
+            else if(year % 4 == 0){
+                if(year % 100 != 0 || year % 400 == 0) {
+                    System.out.println("Leap year: " + year);
+                }
+
+            }
+        }
+        /*
+        System.out.println("=======================");
+        System.out.println("=======================");
+        System.out.println("=======================");
+        System.out.println("=======================");
+        System.out.println("=======================");
+
+       for(int year2 = 0; year2 <=2026; year2++) {
+           if(year2%4 == 0 && (year2 % 100 != 0 || year2 % 400 == 0)) {
+               System.out.println("Leap yearxxx: " + year2);
+           }
+        }
+        */
+
         //--------------------------------------------------------------------------------------------------------------
         System.out.println("Exercise 02");
         // 02.  Print out all numbers from 1-10.
         //      If a number is divisible by three, then print "Fizz".
         //      If a number is divisible by five, then print "Buzz".
         //      If a number is divisible by three and five, print "FizzBuzz".
+
+        for (int n = 1; n <= 100; n++) {
+            if (n % 3 == 0 && n % 5 == 0)
+                System.out.println( n + " : FizzBuzz") ;
+            else if (n % 3 == 0 )
+                System.out.println( n + " : Fizz") ;
+            else if (n % 5 == 0)
+                System.out.println( n + " : Buzz") ;
+            else {
+                System.out.println(n);
+            }
+
+
+        }
 
 
         //--------------------------------------------------------------------------------------------------------------
